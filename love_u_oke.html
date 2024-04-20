@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I-Love-You</title>
+    <style>
+      .duongdi {
+        width: 1350px;
+        display: flex;
+        justify-content: center;
+        margin-top: -500px;
+        position: relative;
+        z-index: -2;
+      }
+      @keyframes effxe {
+        0% {
+          transform: translateX(-400px) translateY(-375px) rotate(0deg);
+        }
+        5% {
+          transform: translateX(-300px) translateY(-375px) rotate(0deg);
+        }
+        15% {
+          transform: translateX(100px) translateY(-465px) rotate(-8deg);
+        }
+        18% {
+          transform: translateX(130px) translateY(-465px) rotate(-8deg);
+        }
+        20% {
+          transform: translateX(170px) translateY(-465px) rotate(-3deg);
+        }
+        21% {
+          transform: translateX(210px) translateY(-375px) rotate(0deg);
+        }
+        45% {
+          transform: translateX(1600px) translateY(-375px) rotate(0deg);
+        }
+
+        50% {
+          transform: translateX(-600px) translateY(-375px) rotate(0deg);
+        }
+      }
+      @keyframes effduong {
+        0% {
+          transform: translateX(0);
+        }
+        45% {
+          transform: translateX(-2225px);
+        }
+        100% {
+          transform: translateX(-2225px);
+        }
+      }
+      .addeffxebuyt {
+        animation: effxe 10s linear;
+      }
+      .addeffduongdi {
+        animation: effduong 10s linear;
+      }
+      .content {
+        color: white;
+        font-weight: bold;
+        font-size: 40px;
+        position: absolute;
+        top: 375px;
+        left: 42%;
+        z-index: -1; /* Đặt z-index nhỏ hơn */
+      }
+      .main {
+        overflow: hidden;
+        width: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .main {
+          width: 200%;
+        }
+        @keyframes effxe {
+          0% {
+            transform: translateX(-400px) translateY(-375px) rotate(0deg);
+          }
+          5% {
+            transform: translateX(-300px) translateY(-375px) rotate(0deg);
+          }
+          15% {
+            transform: translateX(100px) translateY(-525px) rotate(-8deg);
+          }
+          18% {
+            transform: translateX(130px) translateY(-525px) rotate(-8deg);
+          }
+          20% {
+            transform: translateX(170px) translateY(-475px) rotate(-3deg);
+          }
+          21% {
+            transform: translateX(210px) translateY(-395px) rotate(0deg);
+          }
+          45% {
+            transform: translateX(1600px) translateY(-385px) rotate(0deg);
+          }
+
+          50% {
+            transform: translateX(-600px) translateY(-375px) rotate(0deg);
+          }
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .content {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="duongdi">
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+        <img src="duong_di2.png" alt="" width="85%" />
+      </div>
+      <div class="xebuyt">
+        <img
+          src="xebuyt2.png"
+          alt=""
+          id="xebuyt"
+          style="position: relative; top: 0px"
+          width="550px"
+        />
+      </div>
+      <div class="content">em ăn cơm chưa</div>
+    </div>
+    <script>
+      var duongdiElement = document.querySelector(".duongdi");
+      var contentElement = document.querySelector(".content");
+      var xebuytElement = document.querySelector(".xebuyt");
+      var xebuytelement = document.getElementById("xebuyt");
+      function addeffxebuyt() {
+        xebuytElement.classList.add("addeffxebuyt");
+        duongdiElement.classList.add("addeffduongdi");
+        setTimeout(function () {
+          contentElement.style.visibility = "visible";
+        }, 2450);
+        setTimeout(function () {
+          xebuytelement.style.visibility = "hidden";
+        }, 4490);
+        setTimeout(function () {
+          removeeffxebuyt();
+        }, 10000);
+      }
+      function removeeffxebuyt() {
+        xebuytElement.classList.remove("addeffxebuyt");
+        duongdiElement.classList.remove("addeffduongdi");
+        setTimeout(function () {
+          xebuytelement.style.visibility = "visible";
+          contentElement.style.visibility = "hidden";
+          addeffxebuyt();
+        }, 100);
+      }
+      addeffxebuyt();
+      contentElement.style.visibility = "hidden";
+    </script>
+  </body>
+</html>
